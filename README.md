@@ -12,4 +12,4 @@
 2. index.htmlを実行して使用します
 
 # このToDoを使いたいです。
-## URL : https://todo-mms.pages./
+## URL : https://todo-mms.pages.dev/
