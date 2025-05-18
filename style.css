@@ -1,0 +1,276 @@
+:root {
+  --bg-gradient: linear-gradient(135deg, #232526 0%, #414345 100%);
+  --container-bg: #23272f;
+  --container-border: #232323;
+  --text-color: #f0f0f0;
+  --input-bg: #23272f;
+  --input-border: #3a3f4b;
+  --input-focus-bg: #23272f;
+  --input-focus-border: #4fc3f7;
+  --button-bg: #4fc3f7;
+  --button-hover-bg: #039be5;
+  --button-active-bg: #0288d1;
+  --button-text: #fff;
+  --li-bg: #262b33;
+  --li-hover-bg: #313743;
+  --li-completed-bg: #23272f;
+  --li-completed-border: #4fc3f7;
+  --li-completed-text: #8fa1b3;
+  --edit-input-bg: #23272f;
+  --edit-input-border: #4fc3f7;
+  --delete-btn-color: #e57373;
+  --delete-btn-hover: #ff5252;
+  --filters-bg: #23272f;
+  --filters-active-bg: #4fc3f7;
+  --filters-active-shadow: #4fc3f733;
+  --checkbox-accent: #4fc3f7;
+  --h1-color: #4fc3f7;
+  --h1-shadow: #000a;
+  --shadow: 0 8px 32px rgba(0,0,0,0.13);
+}
+
+.light-theme {
+  --bg-gradient: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  --container-bg: #fff;
+  --container-border: #dbeafe;
+  --text-color: #23272f;
+  --input-bg: #f1f5f9;
+  --input-border: #b0b8c1;
+  --input-focus-bg: #fff;
+  --input-focus-border: #4fc3f7;
+  --button-bg: #4fc3f7;
+  --button-hover-bg: #039be5;
+  --button-active-bg: #0288d1;
+  --button-text: #23272f;
+  --li-bg: #f5f7fa;
+  --li-hover-bg: #e2e8f0;
+  --li-completed-bg: #e3f2fd;
+  --li-completed-border: #4fc3f7;
+  --li-completed-text: #b0b8c1;
+  --edit-input-bg: #fff;
+  --edit-input-border: #4fc3f7;
+  --delete-btn-color: #e57373;
+  --delete-btn-hover: #ff5252;
+  --filters-bg: #e2e8f0;
+  --filters-active-bg: #4fc3f7;
+  --filters-active-shadow: #4fc3f733;
+  --checkbox-accent: #4fc3f7;
+  --h1-color: #0288d1;
+  --h1-shadow: #b0b8c1;
+  --shadow: 0 8px 32px rgba(76,195,247,0.07);
+}
+
+body {
+  font-family: 'Segoe UI', 'Hiragino Sans', 'Meiryo', sans-serif;
+  background: var(--bg-gradient);
+  color: var(--text-color);
+  margin: 0;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: var(--container-bg);
+  padding: 28px 24px 24px 24px;
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  border: 1.5px solid var(--container-border);
+  animation: fadeIn 0.7s;
+  position: relative;
+  transition: background 0.3s, border 0.3s, box-shadow 0.3s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: 2.2rem;
+  letter-spacing: 2px;
+  color: var(--h1-color);
+  text-shadow: 0 2px 8px var(--h1-shadow);
+  font-weight: 700;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.input-group {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 12px;
+  font-size: 1.1rem;
+  background: var(--input-bg);
+  border: 1.5px solid var(--input-border);
+  color: var(--text-color);
+  border-radius: 6px;
+  transition: border 0.2s, box-shadow 0.2s, background 0.3s, color 0.3s;
+  box-shadow: 0 2px 8px #0001;
+}
+input[type="text"]:focus {
+  border: 1.5px solid var(--input-focus-border);
+  outline: none;
+  background: var(--input-focus-bg);
+}
+
+button {
+  padding: 12px 16px;
+  background: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: background 0.2s, color 0.2s, transform 0.1s;
+  box-shadow: 0 2px 8px #0001;
+}
+button:hover {
+  background: var(--button-hover-bg);
+  color: #fff;
+}
+button:active {
+  background: var(--button-active-bg);
+  transform: scale(0.97);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 10px;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--li-bg);
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  transition: background 0.3s, border 0.2s;
+  position: relative;
+  gap: 10px;
+  border-left: 4px solid transparent;
+  box-shadow: 0 1px 4px #0001;
+}
+
+li:hover {
+  background: var(--li-hover-bg);
+}
+
+li.completed {
+  border-left: 4px solid var(--li-completed-border);
+  background: var(--li-completed-bg);
+}
+
+li.completed span {
+  text-decoration: line-through;
+  color: var(--li-completed-text);
+  opacity: 0.7;
+}
+
+span.todo-text {
+  flex: 1;
+  cursor: pointer;
+  font-size: 1.08rem;
+  padding-left: 8px;
+  -webkit-user-select: none;
+  user-select: none;
+  transition: color 0.2s;
+}
+
+input.edit-input {
+  flex: 1;
+  padding: 8px;
+  background: var(--edit-input-bg);
+  border: 1.5px solid var(--edit-input-border);
+  color: var(--text-color);
+  border-radius: 6px;
+  font-size: 1.05rem;
+  transition: background 0.3s, color 0.3s, border 0.3s;
+}
+
+.delete-btn {
+  color: var(--delete-btn-color);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  margin-left: 8px;
+  font-weight: bold;
+  transition: color 0.2s;
+  border-radius: 4px;
+  padding: 4px 8px;
+}
+.delete-btn:hover {
+  color: var(--delete-btn-hover);
+  background: #fff2;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.filters button {
+  background: var(--filters-bg);
+  color: var(--button-text);
+  border: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-size: 1rem;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+  font-weight: 500;
+  box-shadow: 0 1px 4px #0001;
+}
+.filters button.active {
+  background: var(--filters-active-bg);
+  color: #fff;
+  box-shadow: 0 2px 8px var(--filters-active-shadow);
+}
+
+.checkbox {
+  accent-color: var(--checkbox-accent);
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: accent-color 0.3s;
+}
+
+/* テーマ切替ボタン */
+.theme-toggle {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  background: none;
+  border: none;
+  color: var(--h1-color);
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: color 0.2s, background 0.2s;
+  z-index: 10;
+  border-radius: 50%;
+  padding: 6px 10px;
+}
+.theme-toggle:hover {
+  color: #fff;
+  background: var(--button-bg);
+}
